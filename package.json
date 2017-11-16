@@ -1,0 +1,40 @@
+{
+  "name": "babel-plugin-livescript",
+  "version": "0.0.1",
+  "description": "Parse LiveScript and convert to Babel AST",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build",
+    "pretest": "npm run build",
+    "test": "nyc --instrument false lsc test",
+    "posttest": "nyc report -r lcov -r json && mv coverage/coverage-final.json coverage/coverage.json"
+  },
+  "repository": "dk00/babel-plugin-livescript",
+  "keywords": [
+    "livescript",
+    "babel",
+    "babel-plugin"
+  ],
+  "author": "dk00 <dk00@csie.org>",
+  "license": "Unlicense",
+  "bugs": "https://github.com/dk00/babel-plugin-livescript/issues",
+  "homepage": "https://github.com/dk00/babel-plugin-livescript#readme",
+  "dependencies": {
+    "livescript": "",
+    "livescript-next": "next"
+  },
+  "devDependencies": {
+    "@babel/core": "",
+    "@babel/plugin-transform-modules-commonjs": "",
+    "@babel/preset-stage-0": "",
+    "@babel/register": "",
+    "babel-plugin-istanbul": "",
+    "babel-plugin-livescript": "",
+    "nyc": "",
+    "rollup": "",
+    "rollup-plugin-babel": "next",
+    "rollup-plugin-node-resolve": "",
+    "tape": ""
+  }
+}

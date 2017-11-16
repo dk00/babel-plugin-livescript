@@ -1,0 +1,9 @@
+node_modules
+lib
+es
+dist
+coverage
+.nyc_output
+tmp
+*.tgz
+.DS_Store
