@@ -18,6 +18,18 @@ function main t
   expected = 'code t.js'
   t.is actual, expected, 'parse non-ls with fallback parse function'
 
+  get-syntax-error = ->
+    code = 'a: 1\n b: 3'
+    parser-override code, source-file-name: \/path/to/module.ls
+
+  try
+    get-syntax-error!
+    t.fail 'must get syntax error'
+  catch
+    actual = e.message
+    expected = "/path/to/module.ls: Parse error on line 1: Unexpected 'INDENT'"
+    t.is actual, expected, 'generate error message with file path'
+
   t.end!
 
 test \Plugin main

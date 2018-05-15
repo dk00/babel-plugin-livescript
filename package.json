@@ -1,8 +1,11 @@
 {
   "name": "babel-plugin-livescript",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Parse LiveScript and convert to Babel AST",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "rollup -c",
     "prepublishOnly": "npm run build",
@@ -16,7 +19,7 @@
     "babel",
     "babel-plugin"
   ],
-  "author": "dk00 <dk00@csie.org>",
+  "author": "dk00 <dk@csie.org>",
   "license": "Unlicense",
   "bugs": "https://github.com/dk00/babel-plugin-livescript/issues",
   "homepage": "https://github.com/dk00/babel-plugin-livescript#readme",
