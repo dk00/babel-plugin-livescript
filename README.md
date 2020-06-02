@@ -2,7 +2,7 @@
 
 Parse LiveScript and convert to Babel AST.
 
-[![build status](https://travis-ci.org/dk00/babel-plugin-livescript.svg)](https://travis-ci.org/dk00/babel-plugin-livescript)
+[![build status](https://github.com/dk00/babel-plugin-livescript/workflows/build/badge.svg)](https://github.com/dk00/babel-plugin-livescript/actions)
 [![coverage](https://codecov.io/gh/dk00/babel-plugin-livescript/branch/master/graph/badge.svg)](https://codecov.io/gh/dk00/babel-plugin-livescript)
 [![npm](https://img.shields.io/npm/v/babel-plugin-livescript.svg)](https://npm.im/babel-plugin-livescript)
 [![dependencies](https://david-dm.org/dk00/babel-plugin-livescript/status.svg)](https://david-dm.org/dk00/babel-plugin-livescript)

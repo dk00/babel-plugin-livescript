@@ -23,6 +23,17 @@
   "license": "Unlicense",
   "bugs": "https://github.com/dk00/babel-plugin-livescript/issues",
   "homepage": "https://github.com/dk00/babel-plugin-livescript#readme",
+  "babel": {
+    "presets": [
+      "upcoming"
+    ],
+    "plugins": [
+      "livescript"
+    ]
+  },
+  "nyc": {
+    "extension": [".ls"]
+  },
   "dependencies": {
     "livescript": "1.5.0",
     "livescript-next": "next"
