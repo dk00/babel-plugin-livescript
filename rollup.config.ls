@@ -1,15 +1,17 @@
 import
-  \rollup-plugin-node-resolve : node-resolve
-  \rollup-plugin-babel : babel
+  'rollup-plugin-pnp-resolve': pnp-resolve
+  '@rollup/plugin-node-resolve': node-resolve
+  '@rollup/plugin-babel': babel
 
-{dependencies} = require \./package.json
+package-config = require \./package.json
 
 config =
   input: \src/index.ls
-  output: file: \lib/index.js format: \cjs sourcemap: true strict: false
+  output: file: package-config.main, format: \cjs sourcemap: true strict: false
   plugins:
+    pnp-resolve!
     node-resolve jsnext: true extensions: <[.ls .js]>
-    babel {}
-  external: Object.keys dependencies
+    babel extensions: [\.ls] babel-helpers: \runtime skip-preflight-check: true
+  external: Object.keys package-config.dependencies
 
 export default: config

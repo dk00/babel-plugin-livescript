@@ -8,10 +8,11 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "prepublishOnly": "npm run build",
     "pretest": "npm run build",
-    "test": "nyc --instrument false lsc test",
-    "posttest": "nyc report -r lcov -r json && mv coverage/coverage-final.json coverage/coverage.json"
+    "test": "nyc --instrument false -e \".ls\" lsc test",
+    "posttest": "nyc report -r lcov -r json && mv coverage/coverage-final.json coverage/coverage.json",
+    "preversion": "npm test && npm run build",
+    "postversion": "npm publish"
   },
   "repository": "dk00/babel-plugin-livescript",
   "keywords": [
@@ -31,24 +32,25 @@
       "livescript"
     ]
   },
-  "nyc": {
-    "extension": [".ls"]
-  },
   "dependencies": {
     "livescript": "1.5.0",
     "livescript-next": "next"
   },
   "devDependencies": {
-    "@babel/core": "",
-    "@babel/plugin-transform-modules-commonjs": "",
-    "@babel/register": "",
-    "babel-plugin-istanbul": "",
-    "babel-plugin-livescript": "",
-    "babel-preset-upcoming": "",
-    "nyc": "",
-    "rollup": "",
-    "rollup-plugin-babel": "4.0.0-beta.8",
-    "rollup-plugin-node-resolve": "",
-    "tape": ""
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.1",
+    "@babel/register": "^7.10.1",
+    "@rollup/plugin-babel": "^5.0.2",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "babel-plugin-istanbul": "^6.0.0",
+    "babel-plugin-livescript": "^0.0.3",
+    "babel-preset-upcoming": "^7.4.1",
+    "nyc": "^15.1.0",
+    "rollup": "^2.12.0",
+    "rollup-plugin-pnp-resolve": "^2.0.0",
+    "tape": "^5.0.1"
+  },
+  "installConfig": {
+    "pnp": true
   }
 }

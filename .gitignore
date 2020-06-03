@@ -7,3 +7,4 @@ coverage
 tmp
 *.tgz
 .DS_Store
+.pnp*
